@@ -1,0 +1,46 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel} % O curso é em francês, mas você pode ajustar se preferir
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{TP1 : Détection et Appariement de Points Caractéristiques \\ \large Cours CSC\_4MI04}
+\author{Seu Nome}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{1. Format d'images et Convolutions}
+
+\subsection*{Question 1 : Expérimentation et analyse des fonctions}
+
+\subsubsection*{Analyse de performance}
+L'expérience a été réalisée sur uma imagem de dimensions \textbf{240 lignes x 360 colonnes}. Les temps d'exécution mesurés pour l'application du noyau de convolution sont les suivants :
+
+\begin{itemize}
+    \item \textbf{Méthode directe (balayage 2D) :} 0.1005145 s
+    \item \textbf{Méthode OpenCV (\texttt{filter2D}) :} 0.000333197 s
+\end{itemize}
+
+\textbf{Observation :} On constate que la fonction \texttt{filter2D} d'OpenCV est environ \textbf{300 fois plus rapide} que le calcul direct par boucles imbriquées. Cette différence s'explique par l'optimisation interne d'OpenCV (écrite en C++) et l'utilisation possible d'instructions SIMD ou de parallélisme, contrairement au balayage manuel en Python qui est sujet à l'interprétation ligne par ligne.
+
+\subsubsection*{Déchiffrage des fonctions utilisées}
+Conformément à l'analyse du code \texttt{Convolutions.py}, voici les fonctions clés identifiées :
+
+\begin{itemize}
+    \item \textbf{Lecture d'image (\texttt{cv2.imread}) :} Charge l'image depuis le disque. Il est important de noter qu'OpenCV lit par défaut les images au format BGR (Bleu-Vert-Rouge) et non RGB.
+    \item \textbf{Copie d'image (\texttt{cv2.copyMakeBorder}) :} Ajoute une bordure à l'image pour gérer les pixels en bordure lors de la convolution.
+    \item \textbf{Affichage (\texttt{plt.imshow}) :} Fonction de MatPlotLib utilisée para visualiser les résultats. Comme MatPlotLib attend du RGB, une conversion est souvent nécessaire pour obtenir les couleurs réelles.
+    \item \textbf{Convolution (\texttt{cv2.filter2D}) :} Applique un noyau (kernel) linéaire à l'image de manière optimisée.
+\end{itemize}
+
+%Q2: Expliquer pourquoi le noyau de convolution fourni en exemple r´ealise un r´ehaussement de
+%contraste par rapport `a l’image originale
+\subsection*{Question 2 : Explication du rehaussement de contraste}
+
+\end{document}
