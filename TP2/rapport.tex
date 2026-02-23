@@ -1,0 +1,53 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel} 
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{minted}
+\usepackage{textalpha}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{subcaption}
+
+\geometry{margin=2.5cm}
+
+\title{TP2 : Classification de caractéristiques locales \\
+Approches supervisée (bayésienne) et non
+supervisée (K-Means) \\ \large Cours CSC\_4MI04}
+\author{Júlia Ellen Dias Leite \\ Helena Guachalla de Andrade \\ Mateus Bastos Soares}
+\date{Février 2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{1. Principes de la classification bayésienne}
+
+\subsection*{1.1 Principes généraux}
+
+Quelle différence y a-t-il entre la classification par le critère du maximum de vraisemblance (ML) et celui du maximum a posteriori (MAP) ? Comment cette différence se traduira-t-elle dans vos programmes ?
+
+\subsection*{1.2 Application à la classification bayésienne des pixels}
+
+Quelles sont les limites de l'utilisation des eules couleurs comme espace d'observation (caractéristiques) ? Quelles autres caractéristiques pouvez-vous proposer pour la segmentaation d'images ?
+
+\section*{2. Classification de caractéristiques locales}
+
+\subsection*{2.1 Classification bayésienne des pixels}
+
+Quelles vous semblent être les espaces d’observations et le nombre de classes les mieux adaptés à la tâche qui vous intéresse ? Quelles sont les difficultés potentielles ? Quelles différences observez-vous entre le modèle bayésien gaussien multidimensionnel et le modèle bayésien gaussien naïf ?
+
+\subsection*{2.2 Classification non supervisée des pixels par K-Means}
+
+Quelles vous semblent être les espaces d’observations et le nombre de classes les mieux adaptés à la tâche qui vous intéresse ? Quelles sont les difficultés potentielles ? Quels sont les avantages et les inconvénients par rapport à l’approche précédente ?
+
+\newpage
+
+\bibliographystyle{apalike}
+\bibliography{bibliography.bib}
+
+\end{document}
